@@ -3,6 +3,8 @@ import java.awt.*;
 
 public class InventoryPanel extends JPanel{
     
+    GameTextArea text;
+    
     public InventoryPanel() {
         super();
         int prefHeight = GameConstants.invHeight;
@@ -11,6 +13,15 @@ public class InventoryPanel extends JPanel{
         setPreferredSize(prefDims);
         setMaximumSize(prefDims);
         
-        setBackground(Color.RED);
+        text = new GameTextArea(GameConstants.invCharHeight, 
+                                 GameConstants.invCharLength);
+        add(text);
+        
+        setBackground(GameConstants.BG_INV_COLOR);
+        
+        
+    }
+    public void setText(String str) {
+        text.setText(str);
     }
 }

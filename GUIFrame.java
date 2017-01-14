@@ -54,6 +54,7 @@ public class GUIFrame extends JFrame {
     
     public static void main(String[] args) {
         GUIFrame gui = new GUIFrame();
+        gui.artPanel.setText(gui.getContentPane().getSize().toString());
     }
     
 }

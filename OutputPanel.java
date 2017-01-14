@@ -3,6 +3,8 @@ import java.awt.*;
 
 public class OutputPanel extends JPanel{
     
+    GameTextArea text;
+    
     public OutputPanel() {
         super();
         int prefHeight = GameConstants.ioHeight;
@@ -11,6 +13,14 @@ public class OutputPanel extends JPanel{
         setPreferredSize(prefDims);
         setMaximumSize(prefDims);
         
-        setBackground(Color.CYAN);
+        text = new GameTextArea(GameConstants.outCharHeight, 
+                                GameConstants.outCharLength);
+        this.add(text);
+        
+        setBackground(GameConstants.BG_OUT_COLOR);
+    }
+    
+    public void setText(String str) {
+        text.setText(str);
     }
 }
