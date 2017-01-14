@@ -2,45 +2,46 @@ import javax.swing.*;
 import java.awt.*;
 public class GUIFrame extends JFrame {
     
-    ArtPanel artPanel;
-    InventoryPanel inventoryPanel;
-    InputPanel inputPanel;
-    OutputPanel outputPanel;
+    GamePanel art; // contains the ascii battle animations
+    GamePanel inv; // contains player inventory
+    GamePanel in; // contains user console
+    GamePanel out; // contains HUD data (hp, etc);
     
-    JPanel verticalPanel;
-    JPanel ioPanel;
+    private JPanel verticalPanel; // contains art, inv, ioPanel
+    private JPanel ioPanel; // contains in, out
     
+    // For convenience only, these aliases:
     static final int X_AXIS = BoxLayout.X_AXIS;
     static final int Y_AXIS = BoxLayout.Y_AXIS;
     
     public GUIFrame() {
-        // Initialize basic components
+        // Initialize basic settings for the frame.
         super(GameConstants.gameTitle);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(GameConstants.xResolution, GameConstants.yResolution);
+        this.setSize(GameConstants.X_RES, GameConstants.Y_RES);
         
         getContentPane().setLayout(new BoxLayout(getContentPane(), Y_AXIS));
         
-        // Initialize Panels
+        // Initialize Organizational Panels
         verticalPanel = new JPanel();
         verticalPanel.setLayout(new BoxLayout(verticalPanel, Y_AXIS));
         
         ioPanel = new JPanel();
         ioPanel.setLayout(new BoxLayout(ioPanel, X_AXIS));
         
-        // Initialize Panels
-        artPanel = new ArtPanel();
-        inventoryPanel = new InventoryPanel();
-        inputPanel = new InputPanel();
-        outputPanel = new OutputPanel();
+        // Initialize Content GamePanels
+        art = new GamePanel(GameConstants.ART);
+        inv = new GamePanel(GameConstants.INV);
+        in  = new GamePanel(GameConstants.IN);
+        out = new GamePanel(GameConstants.OUT);
         
                           
         // Add content panels to helper panels
-        ioPanel.add(inputPanel);
-        ioPanel.add(outputPanel);
+        ioPanel.add(in);
+        ioPanel.add(out);
                           
-        verticalPanel.add(artPanel);
-        verticalPanel.add(inventoryPanel);
+        verticalPanel.add(art);
+        verticalPanel.add(inv);
         verticalPanel.add(ioPanel);
                  
                  
@@ -54,7 +55,19 @@ public class GUIFrame extends JFrame {
     
     public static void main(String[] args) {
         GUIFrame gui = new GUIFrame();
-        gui.artPanel.setText(gui.getContentPane().getSize().toString());
+        gui.art.println("Visible content area: " + 
+                        gui.getContentPane().getSize().toString() + "\n");
+        gui.art.println("Art panel:");
+        gui.art.println(gui.art.getSize());
+        
+        gui.inv.println("Inv panel");
+        gui.inv.println(gui.inv.getSize());
+        
+        gui.in.println("In panel");
+        gui.in.println(gui.in.getSize());
+        
+        gui.out.println("Out panel");
+        gui.out.println(gui.out.getSize());
     }
     
 }
