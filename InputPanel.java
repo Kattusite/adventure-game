@@ -3,6 +3,7 @@ import java.awt.*;
 
 public class InputPanel extends JPanel{
     
+    GameTextArea text;
     public InputPanel() {
         super();
         int prefHeight = GameConstants.ioHeight;
@@ -11,6 +12,16 @@ public class InputPanel extends JPanel{
         setPreferredSize(prefDims);
         setMaximumSize(prefDims);
         
-        setBackground(Color.GREEN);
+        text = new GameTextArea(GameConstants.inCharHeight, 
+                                GameConstants.inCharLength);
+        this.add(text); 
+        
+        setBackground(GameConstants.BG_IN_COLOR);
+        
+        
+    }
+    
+    private void setText(String str) {
+        text.setText(str);
     }
 }
