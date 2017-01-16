@@ -1,0 +1,40 @@
+//
+// The data storage file for all the ASCII item images.
+// 
+// format is as follows, without < and >
+// the keywords item: and end must be preceded by the # character.
+// 
+// item: <the item name>
+// <the ascii image>
+// end
+// only text within item: ... end blocks will be processed. 
+// All other text is a comment, whether or not it is preceded by // 
+// 
+//
+// for ascii images, the whitespace is preserved exactly as is, 
+// including trailing whitespace and newlines. be careful when you type.
+
+// Make sure they align on the right border (whitespace counts!!)
+
+#item: not found
+????
+????
+????
+????
+#end
+
+
+#item: wood sword
+   
+ | 
+ | 
+ Ψ 
+#end
+
+
+#item: steel sword
+  ^ 
+  ^ 
+ -Ξ-
+  | 
+#end
