@@ -4,7 +4,7 @@ public class GUIFrame extends JFrame {
     
     GamePanel art; // contains the ascii battle animations
     GamePanel inv; // contains player inventory
-    GamePanel in; // contains user console
+    GamePanel  in; // contains user console
     GamePanel out; // contains HUD data (hp, etc);
     
     private JPanel verticalPanel; // contains art, inv, ioPanel
@@ -68,6 +68,19 @@ public class GUIFrame extends JFrame {
         
         gui.out.println("Out panel");
         gui.out.println(gui.out.getSize());
+        
+        int numFrames = 200;
+        String[] frames = new String[numFrames];
+        StringBuilder sb = new StringBuilder("(*_*)");
+        for (int k = 0; k < numFrames; k++) {
+            frames[k] = sb.toString();
+            sb.insert(0, " ");
+        }
+        gui.art.animate(frames, 20);
+        gui.inv.print("\ng2g fast"); 
+        
+        gui.art.println();
+        gui.art.type("It was the best of times, it was the worst of times.", 100);
     }
     
 }

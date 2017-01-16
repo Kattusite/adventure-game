@@ -9,7 +9,7 @@ import java.awt.*;
 
 public class GamePanel extends JPanel{
     
-    GameTextArea text;
+    private GameTextArea text;
     
     public GamePanel(int elementID) {
         super();
@@ -42,6 +42,18 @@ public class GamePanel extends JPanel{
         text.clear();
     }
     
+    // Display Methods
+    
+    public void animate(String[] frames, int ms) {
+        text.animate(frames, ms);
+    }
+    
+    public void type(String str, int ms) {
+        text.type(str, ms);
+    }
+    
+    
+    
     // PRINTING METHODS
    
     // Prints the given string
@@ -60,8 +72,14 @@ public class GamePanel extends JPanel{
         text.println(str);
     }
     
+    // Prints an object by invoking toString(), followed by newline.
     public void println(Object obj) {
         text.println(obj);
+    }
+    
+    // Prints a newline, only
+    public void println() {
+        text.println();
     }
     
     // Prints the given formatted string, according to String.format()

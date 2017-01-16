@@ -6,6 +6,8 @@
  * TO ADD: The Font to be used in all GameTextAreas should be stored in this
  * class eventually.
  * 
+ * To do: remove extraneous imports from other classes
+ * 
  */
 
 import java.awt.Color;
@@ -22,6 +24,13 @@ public class GameConstants {
     
     // Title of the game, that appears in the Task view and on the window
     static final String gameTitle = "Grabthar's Fourth";
+    static final String FONT_NAME = "Courier";
+    
+    static final String newline = System.getProperty("line.separator");
+    
+    static final String ASCII_PATH = "ascii.txt";
+    // used when an ascii image is not properly defined in .txt file
+    static final String notFound = "not found"; 
     
     // Constant IDs for gui elements
     // Used as array indexes for calling config data more easily, esp.
