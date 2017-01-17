@@ -74,6 +74,7 @@ public class Inventory {
         Item temp = items[indA];
         items[indA] = items[indB];
         items[indB] = temp;
+        updateGUI();
     }
     
     // EXTREMELY BUGGY FIRST DRAFT

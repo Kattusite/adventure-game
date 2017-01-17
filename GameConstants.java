@@ -91,6 +91,8 @@ public class GameConstants {
     static final Color BG_TEXT_COLOR = Color.decode("#333333"); // websafe dk grey
     static final Color FG_TEXT_COLOR = Color.decode("#00cc00"); // websafe lt green 
     
+    static final Color BG_COLOR = Color.decode("#666699"); // GUIFrame = ws bluish
+    
     // Background colors used for each element of the GUI.
     static final Color[] BG_COLORS = {
         Color.decode("#6666ff"), // ART = websafe bluish

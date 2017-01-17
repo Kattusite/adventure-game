@@ -52,7 +52,10 @@ public class GamePanel extends JPanel{
         text.type(str, ms);
     }
     
-    
+    public void displayASCII(int startX, int startY, String[] ascii, 
+                             boolean preserveWhitespace) {
+        text.displayASCII(startX, startY, ascii, preserveWhitespace);
+    }
     
     // PRINTING METHODS
    

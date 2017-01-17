@@ -47,7 +47,6 @@ public class GUIFrame extends JFrame {
                  
         // Add helper panels to  top level Frame                  
         this.add(verticalPanel);
-        this.add(ioPanel);
         
         this.setVisible(true);
     }
@@ -55,19 +54,25 @@ public class GUIFrame extends JFrame {
     
     public static void main(String[] args) {
         GUIFrame gui = new GUIFrame();
-        gui.art.println("Visible content area: " + 
-                        gui.getContentPane().getSize().toString() + "\n");
-        gui.art.println("Art panel:");
-        gui.art.println(gui.art.getSize());
-        
-        gui.inv.println("Inv panel");
-        gui.inv.println(gui.inv.getSize());
-        
-        gui.in.println("In panel");
-        gui.in.println(gui.in.getSize());
-        
-        gui.out.println("Out panel");
-        gui.out.println(gui.out.getSize());
+        for (int k = 0; k < 3; k++) {
+            gui.art.println("Visible content area: " + 
+                            gui.getContentPane().getSize().toString() + "\n");
+            gui.art.println("Art panel:");
+            gui.art.println(gui.art.getSize());
+            gui.art.println("pref:");
+            gui.art.println(gui.art.getPreferredSize());
+            
+            gui.inv.println("Inv panel");
+            gui.inv.println(gui.inv.getSize());
+            
+            gui.in.println("In panel");
+            gui.in.println(gui.in.getSize());
+            
+            gui.out.println("Out panel");
+            gui.out.println(gui.out.getSize());
+            
+            gui.art.type("0...4...8...12...16...", 90);
+        }
         
         int numFrames = 200;
         String[] frames = new String[numFrames];
